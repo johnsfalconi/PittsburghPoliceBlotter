@@ -6,12 +6,10 @@ import calendar
 import sys
 
 #### TO-DO: ###
-# AUTOMATE THE SCRIPT
 # SET UP REPORTS TO CHECK THE STATUS
 # CREATE POWER BI FOR VISUALIZATION AND PUBLISHING
 # SET UP EXPLANATION ON GITHUB
 
-# need to write a function to automatically back up the blotter table in another table as well as a postgres database dump somewhere.
 engine = create_engine('postgresql://postgres:postgres@localhost:5432/blotter')
 
 # new input method that does away with needless input step
