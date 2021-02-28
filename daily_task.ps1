@@ -7,7 +7,4 @@
 #>
 
 $yesterday = (Get-Date).AddDays(-1).ToString("yyyy-MM-dd")
-$wshell = New-Object -ComObject Wscript.Shell
-$result = python D:\Workspace\"Pittsburgh Police Blotter"/record_pull.py $yesterday "Automated" # may need to change depending on where yours is stored
-
-$Output = $wshell.Popup($result)
+$result = python 'D:\Workspace\Pittsburgh Police Blotter/record_pull.py' $yesterday "Automated" # may need to change depending on where yours is stored

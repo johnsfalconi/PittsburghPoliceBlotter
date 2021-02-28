@@ -12,16 +12,14 @@ import sys
 
 engine = create_engine('postgresql://postgres:postgres@localhost:5432/blotter')
 
-# new input method that does away with needless input step
-yesterday = sys.argv[1]
-
-# old input method
-#yesterday = input("Enter desired date (YYYY-MM-DD): ")
-
-# automatic or manual
-if len(sys.argv) <= 2:
+if len(sys.argv) == 1:
+    yesterday = (date.today() - timedelta(days=1)).strftime('%Y-%m-%d')
+    run_source = 'Automatic'
+elif len(sys.argv) > 1 and len(sys.argv) <= 2:
+    yesterday = sys.argv[1]
     run_source = 'Manual'
 elif len(sys.argv) > 2:
+    yesterday = sys.argv[1]
     run_source = sys.argv[2]
 
 
