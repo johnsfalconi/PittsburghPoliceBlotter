@@ -5,9 +5,9 @@ from datetime import date, timedelta
 import calendar
 import sys
 
-#### TO-DO: ###
-# SET UP REPORTS TO CHECK THE STATUS
-# CREATE POWER BI FOR VISUALIZATION AND PUBLISHING
+#### TO-DO: ####
+# SET UP REPORTS TO CHECK THE STATUS -> activity table set up
+# CREATE POWER BI FOR VISUALIZATION AND PUBLISHING -> need to geocode for mapping out the addresses 
 # SET UP EXPLANATION ON GITHUB
 
 engine = create_engine('postgresql://postgres:postgres@localhost:5432/blotter')
@@ -17,7 +17,7 @@ if len(sys.argv) == 1:
     run_source = 'Automatic'
 elif len(sys.argv) > 1 and len(sys.argv) <= 2:
     yesterday = sys.argv[1]
-    run_source = 'Manual'
+    run_source = 'Automatic'
 elif len(sys.argv) > 2:
     yesterday = sys.argv[1]
     run_source = sys.argv[2]
